@@ -1,4 +1,11 @@
 ---
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: 'src/Jackett.Server/Jackett.Server.csproj'
+    arguments: '-r linux-musl-x64'
+    modifyOutputPath: false
 name: $(majorVersion).$(minorVersion).$(patchVersion)
 variables:
   majorVersion: 0
